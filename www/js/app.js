@@ -51,7 +51,7 @@ angular.module('app', ['ionic'])
     
     .state('start', {
       url: '/',
-      templateUrl: 'start.html'
+      templateUrl: '/start.html'
     })
     
     .state('locate', {
