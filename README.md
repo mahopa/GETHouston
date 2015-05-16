@@ -1,6 +1,7 @@
 # GETHouston
 Houston Hackathon Project
 
-npm install
-bower install
-gulp
+Once the project is pulled down run the following 3 commands
+- npm install
+- bower install
+- gulp
