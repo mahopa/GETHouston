@@ -49,24 +49,24 @@ angular.module('app', ['ionic'])
   // Each state's controller can be found in controllers.js
   $stateProvider
     
-    .state('page3', {
+    .state('start', {
       url: '/',
-      templateUrl: 'page3.html'
+      templateUrl: 'start.html'
     })
     
-    .state('modal1', {
-      url: '/modal',
-      templateUrl: 'modal1.html'
+    .state('locate', {
+      url: '/locate',
+      templateUrl: 'locate.html'
     })
     
-    .state('side-menu2', {
-      url: '/menu',
-      templateUrl: 'side-menu2.html'
+    .state('result', {
+      url: '/result',
+      templateUrl: 'result.html'
     })
     
-    .state('modal2', {
-      url: '/modal',
-      templateUrl: 'modal2.html'
+    .state('detail', {
+      url: '/detail',
+      templateUrl: 'detail.html'
     })
     ;
 
