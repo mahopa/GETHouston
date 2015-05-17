@@ -24,7 +24,6 @@ angular.module('starter', ['ionic'])
   });
 });
 
-
 angular.module('app', ['ionic'])
 
 .run(function($ionicPlatform) {
@@ -39,6 +38,42 @@ angular.module('app', ['ionic'])
       StatusBar.styleDefault();
     }
   });
+})
+
+.controller('TempCtrl', ['$scope', 'yelpAPI', function($scope, yelpAPI) {
+    $scope.businesses = [];
+    yelpAPI.getBusinessInfo('7136549424', function(data) {
+        debugger;
+        $scope.businesses = data.businesses;
+
+    });
+
+}])
+
+.service('yelpAPI', function($http){
+   return {
+    "getBusinessInfo": function(phone, callback) {
+      var method = 'GET';
+      var url = 'http://api.yelp.com/v2/phone_search';//http://api.yelp.com/v2/phone_search?phone='+ phone +'&cc=US&category=restaurants
+      var params = {
+              callback: 'angular.callbacks._0',
+              location: 'Houston',
+              oauth_consumer_key: yelpAPIKey.consumerKey, //Consumer Key
+              oauth_token: yelpAPIKey.token, //Token
+              oauth_signature_method: "HMAC-SHA1",
+              oauth_timestamp: new Date().getTime(),
+              oauth_nonce: randomString(32, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+              phone: phone,
+              cc:'US',
+              category:'restaurants'
+          };
+      var consumerSecret = yelpAPIKey.consumerSecret; //Consumer Secret
+      var tokenSecret = yelpAPIKey.tokenSecret; //Token Secret
+      var signature = oauthSignature.generate(method, url, params, consumerSecret, tokenSecret, { encodeSignature: false});
+      params['oauth_signature'] = signature;
+      $http.jsonp(url, {params: params}).success(callback);
+    }
+  }
 })
 
 .config(function($stateProvider, $urlRouterProvider) {

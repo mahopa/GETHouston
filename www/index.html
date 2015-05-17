@@ -15,15 +15,24 @@
     <link href="/css/preview-frame.css" rel="stylesheet">
     <link href="/css/ionic.app.css" rel="stylesheet">
 
+    <script src="/js/config.js"></script>
+    <script type="text/javascript">
+        function randomString(length, chars) {
+            var result = '';
+            for (var i = length; i > 0; --i) result += chars[Math.round(Math.random() * (chars.length - 1))];
+            return result;
+        }
+    </script>
     <!-- ionic/angularjs js -->
     <script src="/lib/ionic/js/ionic.bundle.js"></script>
+    <script src="/lib/oauth-signature/dist/oauth-signature.js"></script>
     <script src="/js/app.js"></script>
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
   <body ng-app="app" animation="slide-left-right-ios7">
-    <div>
+    <div ng-controller="TempCtrl">
         <div>
             <ion-nav-bar class="bar-stable">
                 <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">Back</ion-nav-back-button>
