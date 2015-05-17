@@ -1,11 +1,10 @@
 app.controller("locateController",
-	['$scope', '$state', '$timeout', '$stateParams', 
-		function($scope, $state, $timeout, $stateParams){
-	/*$scope.loading = function(){
+	['$scope', '$state', '$stateParams', '$timeout', 
+		function($scope, $state, $stateParams, $timeout){
+	$scope.$on('$ionicView.afterEnter' ,function(){
 		$timeout(function() {
-			$state.go('/result');
-		}, 500);
-	}*/
+			$state.go('result');
+		}, 2500);
+	})
 	$scope.location = $stateParams.loc;
-	console.log(JSON.stringify($stateParams));
 }]);
