@@ -1,0 +1,24 @@
+{
+  "name": "oauth-signature",
+  "version": "1.3.0",
+  "main": "dist/oauth-signature.js",
+  "ignore": [
+    ".jshintrc",
+    ".gitignore",
+    ".travis.yml",
+    "Gruntfile.js",
+    "package.json",
+    "src/"
+  ],
+  "homepage": "https://github.com/bettiolo/oauth-signature-js",
+  "_release": "1.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.3.0",
+    "commit": "a5365f0708691560d82f443179fa4b9544062b35"
+  },
+  "_source": "git://github.com/bettiolo/oauth-signature-js.git",
+  "_target": "~1.3.0",
+  "_originalSource": "oauth-signature",
+  "_direct": true
+}
