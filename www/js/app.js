@@ -24,7 +24,7 @@ angular.module('starter', ['ionic'])
   });
 });
 
-angular.module('app', ['ionic'])
+var app = angular.module('app', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -91,18 +91,20 @@ angular.module('app', ['ionic'])
     })
     
     .state('locate', {
-      url: '/locate',
-      templateUrl: 'locate.html'
+      url: '/locate/:loc',
+      templateUrl: '/locate.html',
+      controller: 'locateController'
     })
     
     .state('result', {
       url: '/result',
-      templateUrl: 'result.html'
+      templateUrl: '/result.html',
+      controller: 'resultController'
     })
     
     .state('detail', {
       url: '/detail',
-      templateUrl: 'detail.html'
+      templateUrl: '/detail.html'
     })
     ;
 
