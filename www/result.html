@@ -19,9 +19,10 @@
             </div>
             <ion-list>
                 <div ng-repeat="biz in est">
-                    <ion-item ng-click="seeDetails(biz)">
-                        {{biz.name}}
-                        {{biz.tel}}
+                    <ion-item ng-click="seeDetails(biz)" ng-show="biz.Yelp" ng-init="getYelp(biz)">
+                        {{biz.Name}}
+                        {{biz.Phone}}
+                        {{biz.Yelp}}
                     </ion-item>
                 <div>
             </ion-list>

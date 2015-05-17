@@ -1,5 +1,6 @@
-app.controller('resultController', ['$scope', '$ionicSideMenuDelegate', '$state', 'facilityService', 
-	function($scope, $ionicSideMenuDelegate, $state, facilityService){
+app.controller('resultController', 
+	['$scope', '$ionicSideMenuDelegate', '$state', 'facilityService', 'yelpAPI', 
+	function($scope, $ionicSideMenuDelegate, $state, facilityService, yelpAPI){
 	$scope.est = [];
 	$scope.$on('$ionicView.afterEnter' ,function(){
 		var ests = facilityService.getInfo();
@@ -11,6 +12,17 @@ app.controller('resultController', ['$scope', '$ionicSideMenuDelegate', '$state'
 		$ionicSideMenuDelegate.toggleLeft();
 	};
 	$scope.seeDetails = function(biz){
-		$state.go("detail", {id:biz.id});
+		$state.go("detail", {id:biz.Id});
 	};
+	$scope.getYelp = function(biz){
+		if(biz.Yelp || !biz.Phone){
+			return;
+		}
+		else{
+			yelpAPI.getBusinessInfo(biz.Phone, function(result){
+				biz.Yelp = result;
+				console.log(biz);
+			});
+		}
+	}
 }]);
