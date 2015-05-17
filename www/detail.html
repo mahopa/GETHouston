@@ -1,4 +1,4 @@
-<div class="modal">
+<!-- <div class="modal">
     <ion-header-bar class="bar-stable">
         <h1 class="title">Resturant Name</h1>
         <div class="buttons">
@@ -7,9 +7,117 @@
     </ion-header-bar>
     <ion-content padding="true" scroll="false" class="has-header">
         <ion-list></ion-list>
-        <h1>Heading</h1>
-        <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+        <div>
+            <p>
+                510 Gray St.
+                <br>Stw A, Houston, TX 7702
+            </p>
+            <p>
+                Inspection Rating: GOOD OK BAD
+            </p>
+            <p>Yelp Rating: **** (yelp)</p>
+
         </div>
     </ion-content>
-</div>
+</div> -->
+
+
+<!-- <ion-header-bar align-title="left" class="bar-positive">
+  <div class="buttons">
+    <button class="button" ng-click="doSomething()">Left Button</button>
+  </div>
+  <h1 class="title">Title!</h1>
+  <div class="buttons">
+    <button class="button">Right Button</button>
+  </div>
+</ion-header-bar>
+<ion-content>
+  Some content!
+</ion-content> -->
+
+<!-- 
+$scope.businessData = {
+           "is_claimed":false,
+           "rating":3,
+           "mobile_url":"http://m.yelp.com/biz/which-wich-houston-5",
+           "rating_img_url":"http://s3-media3.fl.yelpcdn.com/assets/2/www/img/34bc8086841c/ico/stars/v1/stars_3.png",
+           "review_count":22,
+           "name":"Which Wich",
+           "snippet_image_url":"http://s3-media2.fl.yelpcdn.com/photo/WEaaMgJN67_CwixWgqPe3Q/ms.jpg",
+           "rating_img_url_small":"http://s3-media3.fl.yelpcdn.com/assets/2/www/img/902abeed0983/ico/stars/v1/stars_small_3.png",
+           "url":"http://www.yelp.com/biz/which-wich-houston-5",
+           "menu_date_updated":1387683300,
+           "phone":"+17136549424",
+           "snippet_text":"Well I'm a fan of WhichWich, this is one of four WhichWich spots that I know of in the Downtown area. This one is actually in midtown on gray & bagby.\n\nSo...",
+           "image_url":"http://s3-media1.fl.yelpcdn.com/bphoto/td1Qwk4NGXp1qD-ySFqlTA/ms.jpg",
+           "categories":[
+              [
+                 "Sandwiches",
+                 "sandwiches"
+              ]
+           ],
+           "display_phone":"+1-713-654-9424",
+           "rating_img_url_large":"http://s3-media1.fl.yelpcdn.com/assets/2/www/img/e8b5b79d37ed/ico/stars/v1/stars_large_3.png",
+           "menu_provider":"single_platform",
+           "id":"which-wich-houston-5",
+           "is_closed":false,
+           "location":{
+              "city":"Houston",
+              "display_address":[
+                 "510 Gray St",
+                 "Downtown",
+                 "Houston, TX 77002"
+              ],
+              "geo_accuracy":8,
+              "neighborhoods":[
+                 "Downtown",
+                 "Midtown",
+                 "Fourth Ward"
+              ],
+              "postal_code":"77002",
+              "country_code":"US",
+              "address":[
+                 "510 Gray St"
+              ],
+              "coordinate":{
+                 "latitude":29.7510796,
+                 "longitude":-95.3755798
+              },
+              "state_code":"TX"
+           }
+        }
+ -->
+
+<ion-view title="{{businessData.name}}" align-title="center" >
+    <ion-content padding="true" class="has-header">
+        <!-- <h1>{{businessData.name}}</h1> -->
+        <div class="para">
+            <p>
+                {{businessData.location.address[0]}}<br>
+                {{businessData.location.city}}, {{businessData.location.state_code}} {{businessData.location.postal_code}}
+            </p>
+            <p>
+               Phone: <a style="text-decoration: none;" href="tel:{{businessData.phone}}">{{businessData.phone | tel}}</a>
+            </p>
+            <p>
+                <div>
+                    <div style="">Inspection Rating</div>
+                    <div style="border: solid 1px #DDDDDD;">
+                        <div style="height: 30px; width: {{inspectionRating}}%; transition: width 0.1s; background: {{inspectionRatingColor}};"></div>
+                    </div>
+                
+            </p>
+            <p>
+    <a class="item item-icon-right" href="#" ng-click="openWindow(businessData.mobile_url);"><!-- <img style="height: 50px;width: 75px;" src="img/yelp2.png"> -->
+                    <span style="color:red;font-weight: bolder;">Yelp</span>&nbsp;
+                    <img ng-src="{{businessData.rating_img_url_small}}"></img>&nbsp;&nbsp;{{businessData.review_count}} reviews
+                    <i class="icon ion-chevron-right icon-accessory pull-right"></i>
+            </a>
+            </p>
+
+        </div>
+        <div style="width:100%;height:100%;">
+           <!-- <div id="mapLocation" data-tap-disabled="true"></div> -->
+        </div>
+    </ion-content>
+</ion-view>
