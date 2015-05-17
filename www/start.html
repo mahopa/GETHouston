@@ -7,7 +7,9 @@
                 <input type="text" ng-model="location">
             </label>
         </form>
-        <div class="button button-stable button-block">Search</div>
+        <div class="button button-stable button-block"
+            ng-click="useAddress(location)"
+        >Search</div>
         <div href="#/locate" class="button button-stable button-block" 
         ng-click="useMyLocation()">Use my location</div>
     </ion-content>

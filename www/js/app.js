@@ -91,7 +91,7 @@ var app = angular.module('app', ['ionic'])
     })
     
     .state('locate', {
-      url: '/locate/:loc',
+      url: '/locate/:address',
       templateUrl: '/locate.html',
       controller: 'locateController'
     })
