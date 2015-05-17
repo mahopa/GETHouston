@@ -1,3 +1,7 @@
-app.controller('resultController', ['$scope',function($scope){
-	
+app.controller('resultController', ['$scope', '$ionicSideMenuDelegate',function($scope, $ionicSideMenuDelegate){
+
+	$scope.toggleMenu = function(){
+		$ionicSideMenuDelegate.toggleLeft();
+	};
+
 }]);
