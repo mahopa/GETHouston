@@ -1,5 +1,5 @@
-app.controller('resultController', ['$scope', '$ionicSideMenuDelegate', 'estService', 
-	function($scope, $ionicSideMenuDelegate, estService){
+app.controller('resultController', ['$scope', '$ionicSideMenuDelegate', '$state', 'estService', 
+	function($scope, $ionicSideMenuDelegate, $state, estService){
 	$scope.est = [];
 	$scope.$on('$ionicView.afterEnter' ,function(){
 		var ests = estService.getInfo();
@@ -10,5 +10,7 @@ app.controller('resultController', ['$scope', '$ionicSideMenuDelegate', 'estServ
 	$scope.toggleMenu = function(){
 		$ionicSideMenuDelegate.toggleLeft();
 	};
-
+	$scope.seeDetails = function(biz){
+		$state.go("detail", {id:biz.id});
+	};
 }]);
