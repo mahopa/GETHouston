@@ -18,9 +18,7 @@
                 <button class="button button-stable button-block">Map</button>
             </div>
             <ion-list>
-                <ion-item href="#/modal">Item 1</ion-item>
-                <ion-item>Item 2</ion-item>
-                <ion-item>Item 3</ion-item>
+                <ion-item href="#/modal" ng-repeat="biz in est">{{biz.name}}</ion-item>
             </ion-list>
         </ion-content>
     </ion-pane>

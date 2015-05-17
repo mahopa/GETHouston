@@ -103,7 +103,7 @@ var app = angular.module('app', ['ionic'])
     })
     
     .state('detail', {
-      url: '/detail',
+      url: '/detail/:id',
       templateUrl: '/detail.html',
       controller: 'detailController'
     })
