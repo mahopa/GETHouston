@@ -55,14 +55,16 @@
             <div class="bar bar-header" style="background: transparent;">
               <button menu-toggle="left" class="button button-balanced button-icon icon ion-navicon"></button>
               <h1 class="title"></h1>
-              <button style="color:#fff;" class="button button-clear button-positive">Map</button>
+              <!--
+                <button style="color:#fff;" class="button button-clear button-positive">Map</button>
+              -->
             </div>
             <ion-list>
                 <div ng-repeat="biz in est">
-                    <ion-item ng-click="seeDetails(biz)" ng-show="biz.Yelp" ng-init="getYelp(biz)">
-                        {{biz.Name}}
-                        {{biz.Phone}}
-                        {{biz.Yelp}}
+                    <ion-item ng-click="seeDetails(biz)" ng-show="biz.Yelp||true" ng-init="getYelp(biz)"
+                        style="background-color: rgba(0, 0, 0, 0.28);font-size: x-large;color: #fff;"
+                    >
+                       <div result-item ></div>
                     </ion-item>
                 <div>
             </ion-list>
