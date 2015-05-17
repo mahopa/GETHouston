@@ -1,16 +1,31 @@
-<ion-view title="GET Houston">
+<ion-view title="GET Houston" class="orange" hide-nav-bar="true">
     <ion-content padding="true" class="has-header">
-        <h1>Welcome</h1>
+        <h1 style="color:#fff;text-align:center;font-weight:lighter;">GET Houston</h1>
         <form>
+           <!--  <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); text-align: center;">
+                <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+            </div> -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <label class="item item-input">
                 <span class="input-label">Address/Zip</span>
                 <input type="text" ng-model="location">
             </label>
         </form>
-        <div class="button button-stable button-block"
-            ng-click="useAddress(location)"
-        >Search</div>
-        <div href="#/locate" class="button button-stable button-block" 
-        ng-click="useMyLocation()">Use my location</div>
+
+  <button ng-click="useAddress(location)" class="button button-outline button-dark button-block" style="  background-color: rgba(0, 0, 0, 0.28);
+  font-size: x-large;
+  color: #fff;">
+  Search
+</button>
+
+  <button ng-click="useMyLocation()" class="button button-outline button-dark button-block" style="  background-color: rgba(0, 0, 0, 0.28);
+  font-size: x-large;
+  color: #fff;">
+  Use my location
+</button>
     </ion-content>
 </ion-view>

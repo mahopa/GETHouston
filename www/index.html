@@ -11,7 +11,7 @@
             height: 504px;
         }
         .para {
-            font-weight: lighter;
+            font-weight: 300;
             font-size: large;
         }
         h1 {
@@ -24,6 +24,35 @@
         #map {
             width: 100%;
             height: 100%;
+        }
+        .orange {
+             background:url('img/background.jpg') no-repeat center top;background-size: 100% 100%;
+             color:#fff;
+        }
+        a:link {
+            text-decoration: none;
+              color: white;
+        }
+
+        a:visited {
+            text-decoration: none;
+              color: white;
+        }
+
+        a:hover {
+            text-decoration: underline;
+              color: white;
+        }
+
+        a:active {
+            text-decoration: underline;
+              color: white;
+        }
+        .header {
+            background: rgb(155, 57, 36);
+        }
+        .headerText {
+            color:#fff;
         }
     </style>
 
@@ -59,7 +88,7 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 <body ng-app="app" animation="slide-left-right-ios7">
-    <div ng-controller="TempCtrl">
+    <div style="background-color: #70767C;">
         <div>
             <ion-nav-bar class="bar-stable">
                 <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">Back</ion-nav-back-button>
