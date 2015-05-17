@@ -8,7 +8,7 @@ app.controller('resultController',
 			$scope.est.push(ests[i]);
 		};
 	});
-	$scope.toggleMenu = function(){
+	$scope.toggleLeft = function(){
 		$ionicSideMenuDelegate.toggleLeft();
 	};
 	$scope.seeDetails = function(biz){
@@ -23,7 +23,6 @@ app.controller('resultController',
 				if(result.businesses.length > 0){
 					biz.Yelp = result.businesses[0];
 				}
-				debugger;
 				console.log(biz);
 			});
 		}
