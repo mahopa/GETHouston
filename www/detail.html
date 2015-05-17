@@ -88,16 +88,25 @@ $scope.businessData = {
         }
  -->
 
-<ion-view title="{{businessData.name}}" align-title="center" >
+<ion-view title="{{businessData.Name}}" align-title="center" >
     <ion-content padding="true" class="has-header">
         <!-- <h1>{{businessData.name}}</h1> -->
         <div class="para">
+            <!-- <div>
+                <img ng-src="{{businessData.Yelp.image_url}}">
+            </div> -->
             <p>
-                {{businessData.location.address[0]}}<br>
-                {{businessData.location.city}}, {{businessData.location.state_code}} {{businessData.location.postal_code}}
+                {{businessData.Yelp.location.address[0]}}<br>
+                {{businessData.Yelp.location.city}}, {{businessData.Yelp.location.state_code}} {{businessData.Yelp.location.postal_code}}
             </p>
             <p>
-               Phone: <a style="text-decoration: none;" href="tel:{{businessData.phone}}">{{businessData.phone | tel}}</a>
+               Phone: <a style="text-decoration: none;" href="tel:{{businessData.phone}}">{{businessData.Yelp.phone | tel}}</a>
+            </p>
+            <p>
+                {{businessData.Cuisine}} Cuisine
+            </p>
+            <p>
+                {{businessData.FacilityType}}
             </p>
             <p>
                 <div>
@@ -108,16 +117,15 @@ $scope.businessData = {
                 
             </p>
             <p>
-    <a class="item item-icon-right" href="#" ng-click="openWindow(businessData.mobile_url);"><!-- <img style="height: 50px;width: 75px;" src="img/yelp2.png"> -->
-                    <span style="color:red;font-weight: bolder;">Yelp</span>&nbsp;
-                    <img ng-src="{{businessData.rating_img_url_small}}"></img>&nbsp;&nbsp;{{businessData.review_count}} reviews
-                    <i class="icon ion-chevron-right icon-accessory pull-right"></i>
-            </a>
+                <a class="item item-icon-right" href="#" ng-click="openWindow(businessData.Yelp.mobile_url);">
+                        <span style="color:red;font-weight: bolder;">Yelp</span>&nbsp;
+                        <img ng-src="{{businessData.Yelp.rating_img_url_small}}"></img>&nbsp;&nbsp;{{businessData.Yelp.review_count}} reviews
+                        <i class="icon ion-chevron-right icon-accessory pull-right"></i>
+                </a>
             </p>
-
-        </div>
-        <div style="width:100%;height:100%;">
-           <!-- <div id="mapLocation" data-tap-disabled="true"></div> -->
+            <p>
+                <div style="border: solid 1px #DDDDDD;height:300px;width:100%;" id="map" data-tap-disabled="true"></div>
+            </p>
         </div>
     </ion-content>
 </ion-view>

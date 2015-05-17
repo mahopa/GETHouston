@@ -20,7 +20,10 @@ app.controller('resultController',
 		}
 		else{
 			yelpAPI.getBusinessInfo(biz.Phone, function(result){
-				biz.Yelp = result;
+				if(result.businesses.length > 0){
+					biz.Yelp = result.businesses[0];
+				}
+				debugger;
 				console.log(biz);
 			});
 		}
