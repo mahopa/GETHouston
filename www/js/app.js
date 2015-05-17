@@ -42,11 +42,11 @@ angular.module('app', ['ionic'])
 
 .controller('TempCtrl', ['$scope', 'yelpAPI', function($scope, yelpAPI) {
     $scope.businesses = [];
-    yelpAPI.getBusinessInfo('7136549424', function(data) {
-        debugger;
-        $scope.businesses = data.businesses;
+    // yelpAPI.getBusinessInfo('7136549424', function(data) {
+    //     debugger;
+    //     $scope.businesses = data.businesses;
 
-    });
+    // });
 
 }])
 
