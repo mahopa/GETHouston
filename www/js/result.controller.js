@@ -19,7 +19,7 @@ app.controller('resultController',
 			return;
 		}
 		else{
-			yelpAPI.getBusinessInfo(biz.Phone, function(result){
+			yelpAPI.getBusinessInfo(biz.Phone.replace(/[^0-9.]/g, ""), function(result){
 				if(result.businesses.length > 0){
 					biz.Yelp = result.businesses[0];
 				}
