@@ -25,7 +25,7 @@ angular.module('starter', ['ionic'])
 });
 
 
-angular.module('app', ['ionic'])
+var app = angular.module('app', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -51,7 +51,8 @@ angular.module('app', ['ionic'])
     
     .state('start', {
       url: '/',
-      templateUrl: '/start.html'
+      templateUrl: '/start.html',
+      controller: 'startController'
     })
     
     .state('locate', {
