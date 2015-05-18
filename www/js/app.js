@@ -87,25 +87,25 @@ var app = angular.module('app', ['ionic'])
     
     .state('start', {
       url: '/',
-      templateUrl: '/start.html',
+      templateUrl: 'start.html',
       controller: 'startController'
     })
     
     .state('locate', {
       url: '/locate/:address',
-      templateUrl: '/locate.html',
+      templateUrl: 'locate.html',
       controller: 'locateController'
     })
     
     .state('result', {
       url: '/result',
-      templateUrl: '/result.html',
+      templateUrl: 'result.html',
       controller: 'resultController'
     })
     
     .state('detail', {
       url: '/detail/:id',
-      templateUrl: '/detail.html',
+      templateUrl: 'detail.html',
       controller: 'detailController'
     })
     ;
